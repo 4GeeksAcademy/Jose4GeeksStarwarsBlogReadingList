@@ -1,45 +1,35 @@
+// flux.js
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+    return {
+        store: {
+            demo: [
+                // Your existing demo data remains here
+            ],
+            people: [], // New state to store people data from SWAPI
+            favorites: [] // New state to store favorites
+        },
+        actions: {
+            // Your existing actions remain here
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+            setPeople: people => {
+                // Update the store with people data from SWAPI
+                setStore({ people });
+            },
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
+            addToFavorites: item => {
+                // Add item to favorites
+                const store = getStore();
+                setStore({ favorites: [...store.favorites, item] });
+            },
+
+            removeFromFavorites: item => {
+                // Remove item from favorites
+                const store = getStore();
+                const updatedFavorites = store.favorites.filter(fav => fav.uid !== item.uid);
+                setStore({ favorites: updatedFavorites });
+            }
+        }
+    };
 };
 
 export default getState;

@@ -1,15 +1,31 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { Context } from "../store/appContext";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+const Home = () => {
+    const { store, actions } = useContext(Context);
+
+    return (
+        <div className="container">
+            <h1>Star Wars Characters</h1>
+            <ul className="list-group">
+                {store.people.map(person => (
+                    <li key={person.uid} className="list-group-item d-flex justify-content-between">
+                        <Link to={`/details/people/${person.uid}`}>
+                            <span>{person.properties && person.properties.name}</span>
+                        </Link>
+                        <button
+                            className="btn btn-success"
+                            onClick={() => actions.addToFavorites(person)}>
+                            <FontAwesomeIcon icon={faHeart} />
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default Home;

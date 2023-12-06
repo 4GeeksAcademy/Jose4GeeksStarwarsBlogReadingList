@@ -14,3 +14,8 @@ const root = createRoot(document.querySelector("#app"))
 //render your react application
 root.render(<Layout/>)
 
+// index.js or your entry file
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faHeart, faTrash);

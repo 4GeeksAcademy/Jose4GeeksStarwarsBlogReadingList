@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
 
-export const Demo = () => {
+ const Demo = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -41,3 +41,4 @@ export const Demo = () => {
 		</div>
 	);
 };
+export default Demo;
