@@ -3,7 +3,6 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Routes } from "react-router";
 
-import ScrollToTop from "./component/scrollToTop";
 
 import Home from "./views/home";
 import Demo from "./views/demo"; // Assuming Demo is exported as default from its file
@@ -20,7 +19,7 @@ const Layout = injectContext(() => {
     return (
         <div>
             <BrowserRouter basename={basename}>
-                <ScrollToTop>
+                
                     <Navbar />
                     <Routes>
                         <Route path="/" element={<Home />} />
@@ -30,7 +29,7 @@ const Layout = injectContext(() => {
                         <Route path="/favorites" element={<Favorites />} />
                         <Route path="*" element={<h1>Not found!</h1>} />
                     </Routes>
-                </ScrollToTop>
+                
             </BrowserRouter>
         </div>
     );
