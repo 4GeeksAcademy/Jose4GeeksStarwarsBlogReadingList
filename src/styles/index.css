@@ -1,3 +1,108 @@
-/* 
-    General Styles
-*/
+/* home.css */
+.card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px; /* Adjust the gap as needed */
+    padding-bottom: 16px;
+    overflow-x: auto;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 18rem; /* Adjust the card width as needed */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.card-buttons {
+    margin-top: auto;
+}
+
+.learn-more-btn {
+    margin-bottom: 8px;
+}
+.title {
+    color: red;
+}
+.btn.btn-primary.learn-more-btn {
+    background-color: transparent;
+    color: #007BFF; 
+    border: 1px solid #007BFF; 
+   
+}
+
+.btn.btn-primary.learn-more-btn:hover {
+    background-color: #007BFF; 
+    color: #fff; 
+}
+.card-title{
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn.btn-warning.btnHeart {
+    background-color: transparent;
+    color: rgb(255, 217, 0); 
+    border: 1px solid rgb(255, 217, 0); 
+    margin-left: 100px;
+    margin-bottom: 8px;
+}
+
+.btn.btn-warning.btnHeart:hover {
+    background-color: rgb(255, 217, 0); 
+    color: #ffffff; 
+}
+.DetailsPage{
+    display: flex;
+    padding-left: 291px !important;
+    padding-right: 291px !important;
+    margin-top: 50px;
+}
+.horizontal-list {
+    display: flex;
+    gap: 90px;
+    font-size: x-large;
+    justify-content: center;
+    margin-top: 40px;
+    border-top: 1px solid red;
+    padding-top: 30px;
+}
+
+.horizontal-list ul {
+    list-style: none;
+}
+
+.horizontal-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px; 
+    color: red;
+}
+.InfoText {
+    margin-left: 30px;
+    text-align: center;
+}
+.InfoText p {
+    font-size: 30px;
+}
+.StarWarsImage {
+    background-color: rgba(0,0,0,0.0);
+    width: 100px;
+    margin-left: 291px;
+}
+#dropdown-favorites {
+    margin-right: 291px;
+    font-size: 20px;
+}
+.navbar {
+    height: 90px;
+}
+.placeholder-image {
+    width: 600px;
+    height: 400px;
+    object-fit: cover; /* or "contain" depending on your preference */
+}

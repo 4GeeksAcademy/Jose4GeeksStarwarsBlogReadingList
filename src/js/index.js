@@ -19,3 +19,4 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faHeart, faTrash);
+import 'bootstrap/dist/css/bootstrap.min.css';
