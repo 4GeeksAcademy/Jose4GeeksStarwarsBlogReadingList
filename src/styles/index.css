@@ -27,6 +27,7 @@
 }
 .title {
     color: red;
+    margin-bottom: 30px;
 }
 .btn.btn-primary.learn-more-btn {
     background-color: transparent;
